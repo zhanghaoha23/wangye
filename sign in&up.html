@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦码科学技术协会</title>
+    <link rel="stylesheet" href="./sign in&up.css">
+</head>
+<body>
+    <div class="container panel-active">
+        <div class="formbox login">
+            <form class="form" id="form1" name="denglu" onsubmit="return check1.checkform()">
+                <h2 class="title">登录</h2>
+                <input type="text" placeholder="学号" class="input" id="xuehao1" onblur="check1.checkxuehao()"> <span class="hhh" id="hhh1">请输入学号</span>
+                <input type="password" placeholder="密码" class="input" id="mima1" onblur="check1.checkmima()"> <span class="hhh" id="hhh2" >请输入密码</span>
+                <button class="button">登录</button>
+                <a href="./find password/find password.html" class="link">忘记密码</a>
+            </form>
+        </div>
+        <div class="formbox register">
+            <form class="form" id="form2" name="zhuce" onsubmit="return check2.checkform()">
+                <h2 class="title">注册</h2>
+                <input type="text" placeholder="学号" class="input" id="xuehao2" onblur="check2.checkxuehao()"> <span class="hhh" id="hhh3">请输入学号</span>
+                <input type="password" placeholder="密码" class="input" id="mima2" onblur="check2.checkmima()"> <span class="hhh" id="hhh4">请输入密码</span>
+                <input type="password" placeholder="请再次输入密码" class="input" id="mima3" onblur="check2.comprise()"><span class="hhh" id="hhh5">请再次输入密码</span>
+                <button class="button">注册</button>
+            </form>
+        </div>
+        <div class="overlay-box">
+            <div class="overlay">
+                <div class="panel over-left">
+                    <button class="button" id="signin">已有账号，立即登录</button>
+                </div>
+                <div class="panel over-right">
+                    <button class="button" id="signup">无账号，前往注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./sign in&up.js"></script>
+    <script>
+        const signinbutton=document.querySelector("#signin")
+        const signupbutton=document.querySelector("#signup")
+        const container=document.querySelector(".container")
+        signinbutton.addEventListener("click",()=>{
+            container.classList.remove("panel-active")
+        })
+        signupbutton.addEventListener("click",()=>{
+            container.classList.add("panel-active")
+        })
+    </script>
+</body>
+</html>
